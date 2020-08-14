@@ -1,0 +1,75 @@
+
+
+<div class="border container">
+  <form [formGroup]="RegisterForm" (ngSubmit)="RegisterFormSubmit(RegisterForm)" method="POST">
+      <div class="form-group col-md-6">
+          <label for="Username">Name</label>
+          <input type="text" class="form-control" id="Username" name="name" formControlName="name"  placeholder="Enter your name" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="Email_address">Email address</label>
+        <input type="email" class="form-control" id="Email_address" name="email" formControlName="email" placeholder="Enter email" required>
+      </div>
+      <div class="form-group col-md-6">
+          <label for="Mobile_Number">Mobile Number</label>
+          <input type="number" class="form-control" id="Mobile_Number" name="mobile_number" formControlName="mobile_number" placeholder="Enter your mobile number" required>
+      </div>
+      <div class="form-group col-md-6">
+          <label for="State">Address</label>
+          <select id="State" class="form-control" name="state" formControlName="state">
+            <option selected>State</option>
+            <option>Andhra Pradesh</option>
+            <option>Arunachal Pradesh</option>
+            <option>Assam</option>
+            <option>Bihar</option>
+            <option>Chhattisgarh</option>
+            <option>Goa</option>
+            <option>Gujarat</option>
+            <option>Haryana</option>
+            <option>Himachal Pradesh</option>
+            <option>Jharkhand</option>
+            <option>Karnataka</option>
+            <option>Kerala</option>
+            <option>Madhya Pradesh</option>
+            <option>Maharashtra</option>
+            <option>Manipur</option>
+            <option>Meghalaya</option>
+            <option>Mizoram</option>
+            <option>Nagaland</option>
+            <option>Odisha</option>
+            <option>Punjab</option>
+            <option>Rajasthan</option>
+            <option>Sikkim</option>
+            <option>Tamil Nadu</option>
+            <option>Telangana</option>
+            <option>Tripura</option>
+            <option>Uttar Pradesh</option>
+            <option>Uttarakhand</option>
+            <option>West Bengal</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <input type="text" class="form-control" id="City" name="city" formControlName="city" placeholder="City">
+        </div>
+        <div class="form-group col-md-6">
+          <input type="text" class="form-control" id="local_address" name="local_address" formControlName="local_address" placeholder="Street address , apartement , suite , fllor etc">
+        </div>
+        <div class="form-group col-md-6">
+          <input type="number" class="form-control" id="Pin_Code" name="pin_code" formControlName="pin_code" placeholder="Pin Code">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="Password">Password</label>
+          <input type="password" class="form-control" id="Password" name="password" formControlName="password" placeholder="Password">
+        </div>
+        <div class="form-group col-md-6">
+          <button type="submit" class="btn btn-primary form-group col-md-4">Submit</button>
+        </div>
+    </form>
+    <div class="form-group col-md-6">
+      <button type="submit" class="btn btn-warning form-group col-md-4"><a routerLink='/Login'>Login</a></button>
+    </div>
+</div>
+
+
+
+

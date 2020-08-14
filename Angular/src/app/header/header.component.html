@@ -1,0 +1,77 @@
+<!-- 
+    ######################################################################
+                 1nd step hai book ko buy kerne k leye 
+    ######################################################################
+ -->
+
+
+<section class="container-fluid Header_div">
+  <div class="form-row">
+    <div class="form-group col-lg-3 col-md-4 col-9 x">
+      <img src="assets/image/logo_photo.png" alt="" width="40" height="40">
+      <img src="assets/image/logo_name.png" alt="" width="150" height="40">
+    </div>
+
+    <span *ngIf="width767()">
+      <div class="form-group  col-1 y" id="cart_icon">
+        <a href="#" id="Header_meanu">
+          <img src="assets/image/Cart.png" alt="" width="40" height="40">
+        </a>
+      </div>
+    </span>
+
+    <div class="form-group col-lg-4 col-md-6 col-12">
+
+      <form [formGroup]="Search" (ngSubmit)="Search_Book(Search)">
+        <div class="input-group md-form form-sm form-1 pl-0 Search">
+          <input class="form-control my-0 py-1 Input_Search" type="text" formControlName="search_input"
+            placeholder="Search Book , Author" aria-label="Search" (click)="Search_Again()">
+          <div class="input-group-prepend z">
+            <button type="submit" class="input-group-text  cyan lighten-2"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+    <span *ngIf="width991()">
+      <div class="form-group col-md-1 col-1 y" id="cart_icon">
+        <a href="#" id="Header_meanu">
+          <img src="assets/image/Cart.png" alt="" width="40" height="40">
+        </a>
+      </div>
+    </span>
+
+    <div class="form-group col-lg-1 col-md-3 col-sm-3 col-3 d x" id="d">
+      <a class="nav-link  font-weight-bold " id="Header_meanu" routerLink='/Front_Page'>Home</a>
+    </div>
+
+    <div class="form-group col-lg-1 col-md-3 col-sm-3 col-3 x" id="d">
+      <a class="nav-link  font-weight-bold" id="Header_meanu" routerLink='/SellBookDetail'>About</a>
+    </div>
+
+    <div class="form-group col-lg-1 col-md-3 col-sm-3 col-3 y" id="d">
+      <a class="nav-link  font-weight-bold" id="Header_meanu" routerLink='/SellBookDetail'>Sell</a>
+    </div>
+
+    <div class="form-group col-lg-1 col-md-3 col-sm-3 col-3 y" id="Header_meanu_Setting">
+
+      <span id="Header_meanu" class="" data-toggle="dropdown">Setting</span>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item Sub_meanu" href="#">Profile</a>
+        <a class="dropdown-item Sub_meanu" href="#">Contact</a>
+        <a class="dropdown-item Sub_meanu" href="#">Logout</a>
+      </div>
+
+    </div>
+
+    <span *ngIf="width992()">
+      <div class="form-group col-lg-1 col-md-2 col-sm-2 col-2 x">
+        <a href="#" id="Header_meanu">
+          <img src="assets/image/Cart.png" alt="" width="40" height="40">
+        </a>
+      </div>
+    </span>
+
+  </div>
+</section>

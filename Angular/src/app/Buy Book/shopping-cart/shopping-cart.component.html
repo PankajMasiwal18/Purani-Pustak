@@ -1,0 +1,57 @@
+<app-header></app-header>
+
+<span *ngIf="width991()">
+    <div class="container">
+    
+        <span *ngFor="let i of BookDetail ">
+            <span *ngIf="check(i._id)">
+                <div class="row">
+                <div class="col-sm col-6 data">
+                    <p id="Book_Image"><img src="http://localhost:3000/{{i.Image}}" width="100" height="100"></p>
+                </div>
+                <div class="col-sm col-6 data">
+                    <p class="Book_Name">{{i.Book_Name}}</p>
+                    <p class="Book_Author_Name">{{i.Book_Author_Name}}</p>
+                </div>
+                <div class="col-sm col-6 data">
+                    <p class="Total_Book_Price"><b>Price : </b>₹ {{i.Price*value}}</p>
+                   <p> Qty : <input type="number" min="1" max="{{i.Quantity}}" name="qValue"
+                        (keyup)="onKey($event , i._id)" (click)="onClick($event , i._id)" value="{{value}}"></p>
+                </div>
+                <div class="col-sm col-6 data">
+                    <p><button class="delete_button" (click)="Delete(i._id)"><b>Delete</b></button></p>
+                </div>
+            </div>
+            </span>
+        </span>
+    
+</div>
+</span>
+
+<span *ngIf="width767()">
+<span *ngFor="let i of BookDetail">
+    <div class="card">
+        <span (click)="BuyBook(i._id)">
+            <img src="http://localhost:3000/{{i.Image}}" width="200" height="200">
+            <p class="Book_Name">{{i.Book_Name}}</p>
+            <p class="Book_Author_Name">{{i.Book_Author_Name}}</p>
+            <p class="Price">₹ {{i.Price*value}}</p>
+            <p> Qty : <input type="number" min="1" max="{{i.Quantity}}" name="qValue"
+                (keyup)="onKey($event , i._id)" (click)="onClick($event , i._id)" value="{{value}}"></p>
+                <p><button class="delete_button" (click)="Delete(i._id)"><b>Delete</b></button></p>
+        </span>
+    </div>
+</span>
+</span>
+
+
+<span *ngIf="sum()">
+    <div class="SumOfBookPrice">
+        <b>Total Price</b><span>{{SumOfBookPrice}}</span>
+        <button (click)="pay()">Pay</button>
+    </div>
+</span>
+
+
+
+

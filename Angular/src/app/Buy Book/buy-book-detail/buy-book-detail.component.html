@@ -1,0 +1,42 @@
+<app-header (Header_Output)="getBookDetail($event)"></app-header>
+
+
+
+<section class="container ">
+
+    <span *ngFor="let i of BookDetail">
+        <span *ngIf="check(i._id)">
+            <div class="form-row   card_in_detail">
+
+                <div class="form-group Book_Image_Div   col-lg-7 col-md-10 col-12 ">
+                    <p id="Book_Image"><img class="img-fluid" src="http://localhost:3000/{{i.Image}}" width="400"
+                            height="400"></p>
+                </div>
+
+                <div class="form-group col-lg-5 col-md-12 col-12 ">
+                    <p class="Book_Name">{{i.Book_Name}}</p>
+                    <p class="Book_Author_Name">{{i.Book_Author_Name}}</p>
+                    <p class="Price">₹ {{i.Price}}</p>
+                    <p class="Quantity">In stock: {{i.Quantity}} available</p>
+
+                    <form [formGroup]="Book_Quantity" (ngSubmit)="quantity(Book_Quantity,i._id,BookDetail)">
+                        <label for="Book_Quantity_input"><b>Quantity : </b></label>
+                        <input type="number" value="1" min="1" max="{{i.Quantity}}" name="qValue"
+                            id="Book_Quantity_input" (keyup)="onKey($event , i.Quantity , i._id,BookDetail)"
+                            (click)="onClick($event , i.Quantity)" formControlName="Book_Quantity">
+
+                        <span *ngIf="IfCorrectQuantity() ; else elseBlock">
+                            <p><button type="submit">Add To Bag</button></p>
+                        </span>
+                        <ng-template #elseBlock>
+                            <p><button type="submit" disabled>Add To Bag</button></p>
+                        </ng-template>
+
+                    </form>
+                    <p><button (click)="checkOut()">Check Out</button></p>
+                </div>
+            </div>
+        </span>
+    </span>
+
+</section>

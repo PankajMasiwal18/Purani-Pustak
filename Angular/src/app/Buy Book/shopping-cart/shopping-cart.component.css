@@ -1,0 +1,47 @@
+.data{
+    border: 1px solid silver;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.delete_button {
+    border: none;
+    outline: 0;
+    color: white;
+    background-color: rgb(243, 45, 45);
+    text-align: center;
+    cursor: pointer;
+    width: 60%;
+    height:5vh;
+    font-size: 18px;
+    font-family: Poppins-SemiBold;
+    margin-top:3vh;
+  }
+
+p
+{
+    color: black;
+    font-size: 25px;
+    margin-top: 20px;
+    font-family: Poppins-SemiBold;
+    text-align: center;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    /* margin: auto; */
+    text-align: center;
+    font-family: arial;
+    /* float: left; */
+    padding-top:20px;
+    margin-left: 25px;
+    margin-top: 20px;
+  }
+
+
+.SumOfBookPrice
+{
+    border: 1px solid black;
+    height:100px;
+}

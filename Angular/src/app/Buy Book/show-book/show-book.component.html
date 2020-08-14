@@ -1,0 +1,19 @@
+<app-header (Header_Output)="getBookDetail($event)"></app-header>
+
+<!-- 
+    ######################################################################
+                 2nd step hai book ko buy kerne k leye 
+    ######################################################################
+ -->
+
+<span *ngFor="let i of BookDetail">
+    <div class="card">
+        <span (click)="BuyBook(i._id)">
+            <img src="http://localhost:3000/{{i.Image}}" width="300" height="300">
+            <p class="Book_Name">{{i.Book_Name}}</p>
+            <p class="Book_Author_Name">{{i.Book_Author_Name}}</p>
+            <p class="Price">₹ {{i.Price}}</p>
+            <p><button (click)="BuyBook(i._id)">Buy</button></p>
+        </span>
+    </div>
+</span>

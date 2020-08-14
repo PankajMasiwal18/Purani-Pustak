@@ -1,0 +1,61 @@
+.container
+{
+    margin-top: 5vh;
+}
+
+#Book_Image
+{
+    text-align: center;
+    margin-top: 5% ;
+    
+}
+
+#Book_Quantity_input
+{
+    width: 15%;
+    height: 5vh;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    border: 1px solid rgb(110, 105, 105);
+}
+
+
+.card_in_detail button
+{
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 50%;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.card_in_detail button:hover {
+    opacity: 0.7;
+  }
+
+p
+{
+    color: black;
+    font-size: 25px;
+    margin-top: 20px;
+    font-family: Poppins-SemiBold;
+}
+
+.Quantity
+{
+    color: gray;
+    font-size: 20px;
+    font-family: Poppins-SemiBold;
+}
+
+b{
+    font-size: 20px;
+    font-family: Poppins-SemiBold;
+}

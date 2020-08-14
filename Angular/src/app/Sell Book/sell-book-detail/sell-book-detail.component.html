@@ -1,0 +1,38 @@
+<app-header></app-header>
+<!-- <div *ngIf="check()"> -->
+<div class="border container">
+    <form [formGroup]="BookDetailForm" (ngSubmit)="onSubmit(BookDetailForm)" method="POST">
+        <div class="form-group col-md-6">
+            <label for="Tittle">Tittle</label>
+            <input type="text" class="form-control" id="Tittle" name="Tittle" formControlName="Tittle"  placeholder="Enter your Tittle" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Author">Author</label>
+            <input type="text" class="form-control" id="Author" name="Author" formControlName="Author"  placeholder="Enter your Author" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Edition">Edition</label>
+            <input type="number" class="form-control" id="Edition" name="Edition" formControlName="Edition" placeholder="Enter your Edition" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Expected_Amount">Expected Amount</label>
+            <input type="number" class="form-control" id="Expected_Amount" name="Expected_Amount" formControlName="Expected_Amount" placeholder="Enter your Expected Amount" required>
+        </div>
+        <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary form-group col-md-4">Submit</button>
+        </div>
+      </form>
+
+
+      <div class="form-group col-md-6">
+        <button type="submit" class="btn btn-primary form-group col-md-4" (click)="Logout()">Log Out</button>
+    </div>
+      <!-- <p class="lead" style="color:white;">
+        <a class="btn btn-primary btn-lg" role="button" (click)="Logout()">Log Out</a>
+      </p> -->
+  </div>
+  
+  
+  
+<!--   
+</div> -->

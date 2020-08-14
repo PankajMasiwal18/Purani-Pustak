@@ -1,0 +1,30 @@
+<form [formGroup]="Search" (ngSubmit)="Search_Book(Search)">
+    <div class="search_div  row ">
+        <div class="col-10">
+            <input type="text" id="search_input" formControlName="search_input" placeholder="Search Book , Author">
+        </div>
+        <div class="col-2  search_button_slider_div">
+            <button type="submit" class="search_button_slider"><i class="fa fa-search"></i></button>
+        </div>
+    </div>
+</form>
+
+<div *ngIf="value ; else elseBlock">  
+    <ul *ngFor="let i of BookDetail">
+        <li>{{i.Book_Name}}</li>
+        <li>{{i.Book_Author_Name}}</li>
+        <li>{{i.Price}}</li>
+        <li>{{i.Quantity}}</li>
+        <li><img src="http://localhost:3000/{{i.Image}}" width="100" height="100"></li>
+        <button (click)="edit(i._id)" >edit</button>
+    </ul>
+</div>
+<ng-template #elseBlock>
+    <form #employeeForm="ngForm" (ngSubmit)="Update(employeeForm)">
+        <input type="text"  [(ngModel)]="Book_Name" name="Book_Name">
+        <input type="text"  [(ngModel)]="Book_Author_Name" name="Book_Author_Name">
+        <input type="text"  [(ngModel)]="Price" name="Price">
+        <input type="text"  [(ngModel)]="Quantity" name="Quantity">
+        <button type="submit" class="btn btn-primary form-group col-md-4">Submit</button>
+    </form>
+</ng-template>

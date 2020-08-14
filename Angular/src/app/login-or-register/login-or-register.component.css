@@ -1,0 +1,82 @@
+#background_image_Login
+{
+    width: 100%;
+    height:120vh;
+    position: relative;
+}
+
+#background_image_Register
+{
+    width: 100%;
+    height:207vh;
+    position: relative;   
+}
+
+#Form_div
+{
+    position: absolute;
+    top: 20%;
+    height: 100%;
+}
+
+#Login_Form_Div
+{
+    z-index: 1;
+    background: #0000008a;
+    border-radius: 2%;
+}
+
+#Login_text
+{
+    font-family: Poppins-SemiBold;
+    font-size: 40px;
+    margin-top: 15%;
+    text-align: center;
+    color:white;
+}
+
+#Login_Form_Form
+{
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#Login_button
+{
+    border-radius: 2%;
+}
+
+#swap
+{
+    color: white;
+}
+
+.label_text
+{
+    color: white;
+}
+
+.Login_Register_Image
+{
+    border-radius: 50%;
+    width: 100px; 
+    height: 100px;
+    margin-left: 40%;
+}
+
+.Show_Message
+{
+    position: absolute;
+    top: 10%;
+    font-family: Poppins-SemiBold;
+    font-size: small;
+}
+
+#logo_name
+{
+    position: absolute;
+    top: 0px;
+}
+
+

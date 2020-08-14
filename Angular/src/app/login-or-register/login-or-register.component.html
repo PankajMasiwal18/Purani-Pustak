@@ -1,0 +1,172 @@
+<div>
+    <span *ngIf="Image() ; else Image_Block">
+        <img src="assets/image/Login_Or_Register_BackGround_Image.jpg" alt="" id="background_image_Login">
+        <div>
+            <img src="assets/image/logo_name.png" alt="" width="150" height="40" id="logo_name">
+        </div>
+    </span>
+    <ng-template #Image_Block>
+        <img src="assets/image/Login_Or_Register_BackGround_Image.jpg" alt="" id="background_image_Register">
+    </ng-template>
+
+    <span *ngIf="Check_Login_Register() ; else Register_Block">
+        <span *ngIf="Login_Message">
+            <section class="container-fluid">
+                <section class="row justify-content-center">
+                    <div class="alert bg-danger text-white alert-dismissible fade show Show_Message  row justify-content-center"
+                        role="alert">
+                        <strong>{{Login_Message}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </section>
+            </section>
+        </span>
+        <section class="container-fluid" id="Form_div">
+            <section class="row justify-content-center">
+                <section class="col-10 col-sm-10 col-md-6 col-lg-6 col-xl-4 " id="Login_Form_Div">
+                    <p id="Login_text">Login</p>
+                    <img src="assets/image/Login_Image.png" alt="" class="Login_Register_Image">
+                    <form id="Login_Form_Form" class="form-container" [formGroup]="LoginForm"
+                        (ngSubmit)="LoginFormSubmit(LoginForm)" method="POST">
+                        <div class="form-group">
+                            <label for="Email_address" class="label_text">Email address</label>
+                            <input type="email" class="form-control" id="Email_address" formControlName="email"
+                                placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Password" class="label_text">Password</label>
+                            <input type="password" class="form-control " id="Password" formControlName="password"
+                                placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block" id="Login_button">Login</button>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-info btn-block" id="swap" (click)="Register()">Sign
+                                up</button>
+                        </div>
+                    </form>
+                </section>
+            </section>
+        </section>
+    </span>
+    <ng-template #Register_Block>
+        <span *ngIf="Register_Message_Color() ; else Else_Register_Message_Color">
+            <span *ngIf="Register_Message">
+                <section class="container-fluid">
+                    <section class="row justify-content-center">
+                        <div class="alert bg-danger text-white alert-dismissible fade show Show_Message  row justify-content-center"
+                            role="alert">
+                            <strong>{{Register_Message}}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </section>
+                </section>
+            </span>
+        </span>
+        <ng-template #Else_Register_Message_Color>
+            <section class="container-fluid">
+                <section class="row justify-content-center">
+                    <div class="alert bg-success text-white alert-dismissible fade show Show_Message  row justify-content-center"
+                        role="alert">
+                        <strong>{{Register_Message}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </section>
+            </section>
+        </ng-template>
+        <section class="container-fluid" id="Form_div">
+            <section class="row justify-content-center">
+                <section class="col-10 col-sm-10 col-md-6 col-lg-6 col-xl-4 " id="Login_Form_Div">
+                    <p id="Login_text">Sign Up</p>
+                    <img src="assets/image/Register_Image.png" alt="" class="Login_Register_Image">
+                    <form id="Login_Form_Form" [formGroup]="RegisterForm" (ngSubmit)="RegisterFormSubmit(RegisterForm)"
+                        method="POST">
+                        <div class="form-group">
+                            <label for="Username" class="label_text">Name</label>
+                            <input type="text" class="form-control" id="Username" name="name" formControlName="name"
+                                placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Email_address" class="label_text">Email address</label>
+                            <input type="email" class="form-control" id="Email_address" name="email"
+                                formControlName="email" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Mobile_Number" class="label_text">Mobile Number</label>
+                            <input type="number" class="form-control" id="Mobile_Number" name="mobile_number"
+                                formControlName="mobile_number" placeholder="Enter your mobile number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="State" class="label_text">State</label>
+                            <select id="State" class="form-control" name="state" formControlName="state">
+                                <option>Andhra Pradesh</option>
+                                <option>Arunachal Pradesh</option>
+                                <option>Assam</option>
+                                <option>Bihar</option>
+                                <option>Chhattisgarh</option>
+                                <option>Goa</option>
+                                <option>Gujarat</option>
+                                <option>Haryana</option>
+                                <option>Himachal Pradesh</option>
+                                <option>Jharkhand</option>
+                                <option>Karnataka</option>
+                                <option>Kerala</option>
+                                <option>Madhya Pradesh</option>
+                                <option>Maharashtra</option>
+                                <option>Manipur</option>
+                                <option>Meghalaya</option>
+                                <option>Mizoram</option>
+                                <option>Nagaland</option>
+                                <option>Odisha</option>
+                                <option>Punjab</option>
+                                <option>Rajasthan</option>
+                                <option>Sikkim</option>
+                                <option>Tamil Nadu</option>
+                                <option>Telangana</option>
+                                <option>Tripura</option>
+                                <option>Uttar Pradesh</option>
+                                <option>Uttarakhand</option>
+                                <option>West Bengal</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="Password" class="label_text">City</label>
+                            <input type="text" class="form-control" id="City" name="city" formControlName="city"
+                                placeholder="City">
+                        </div>
+                        <div class="form-group">
+                            <label for="Password" class="label_text">Local Address</label>
+                            <input type="text" class="form-control" id="local_address" name="local_address"
+                                formControlName="local_address"
+                                placeholder="Street address , apartement , suite , fllor etc">
+                        </div>
+                        <div class="form-group">
+                            <label for="Password" class="label_text">Pin Code</label>
+                            <input type="number" class="form-control" id="Pin_Code" name="pin_code"
+                                formControlName="pin_code" placeholder="Pin Code">
+                        </div>
+                        <div class="form-group">
+                            <label for="Password" class="label_text">Password</label>
+                            <input type="password" class="form-control" id="Password" name="password"
+                                formControlName="password" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-info btn-block" id="swap"
+                                (click)="Login()">Login</button>
+                        </div>
+                    </form>
+                </section>
+            </section>
+        </section>
+    </ng-template>
+</div>
